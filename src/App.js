@@ -5,6 +5,7 @@ import AuthProvider from "./Context/AuthProvider";
 import Signup from "./Components/Authentication/Signup";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Home from "./Components/Home/Home";
+import AllShows from "./Components/Home/AllShows/AllShows";
 
 function App() {
   return (
@@ -30,6 +31,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <Home />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/shows"
+              element={
+                <PrivateRoute>
+                  <AllShows />
                 </PrivateRoute>
               }
             />
