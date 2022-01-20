@@ -6,6 +6,7 @@ import Signup from "./Components/Authentication/Signup";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Home from "./Components/Home/Home";
 import AllShows from "./Components/Home/AllShows/AllShows";
+import ShowDetails from "./Components/Home/AllShows/ShowDetails";
 
 function App() {
   return (
@@ -39,6 +40,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <AllShows />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/show/:id"
+              element={
+                <PrivateRoute>
+                  <ShowDetails />
                 </PrivateRoute>
               }
             />
