@@ -1,55 +1,36 @@
 import React from "react";
-import { Box, Button, TextField, Typography } from "@mui/material";
-import landingPageImg from "../../../Images/landingPageImg.webp";
-import { useForm } from "react-hook-form";
+import { Box, Typography, Button, Container } from "@mui/material";
+import tvImg from "../../../Images/tv.jpg";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
-  // use hook from function here
-  // react hook form functions here
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
-  };
+  // react router dom hook here
+  const navigate = useNavigate();
 
   return (
     <Box
       sx={{
-        backgroundImage: `url(${landingPageImg})`,
+        backgroundImage: `url(${tvImg})`,
         backgroundPosition: "center center",
         backgroundSize: "cover",
         textAlign: "start",
-        py: 20,
-        px: 6,
+        py: { xs: 18, md: 25 },
       }}
     >
-      {/* content start here  */}
-      <Typography variant="h1" sx={{ fontWeight: "bold", color: "#FFF" }}>
-        Find your dream job <br /> with us!
-      </Typography>
-      {/* form start here  */}
-      <Box sx={{ py: 4 }}>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
+      <Container>
+        {/* content start here  */}
+        <Typography variant="h2" sx={{ fontWeight: "bold", color: "#FFF" }}>
+          Start watching your <br /> favourite shows !
+        </Typography>
+        <Button
+          size="large"
+          variant="contained"
+          onClick={() => navigate("/shows")}
+          sx={{ bgcolor: "text.primary", my: 2 }}
         >
-          <TextField
-            sx={{ width: "45%", mr: 2, bgcolor: "#FFF", borderRadius: "5px" }}
-            label="language"
-            type="text"
-            variant="filled"
-            {...register("language")}
-            required
-          />
-          <Button variant="contained" size="large" sx={{ py: 2 }} type="submit">
-            Search jobs
-          </Button>
-        </form>
-      </Box>
+          See all shows
+        </Button>
+      </Container>
     </Box>
   );
 };

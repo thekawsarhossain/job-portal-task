@@ -16,7 +16,7 @@ const Navigation = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ bgcolor: "text.primary", py: 1 }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -27,13 +27,14 @@ const Navigation = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Button
-            sx={{ flexGrow: 1 }}
-            color="inherit"
-            onClick={() => navigate("/")}
-          >
-            Home
-          </Button>
+          <Box sx={{ flexGrow: 1 }}>
+            <Button color="inherit" onClick={() => navigate("/")}>
+              Home
+            </Button>
+            <Button color="inherit" onClick={() => navigate("/shows")}>
+              All-Shows
+            </Button>
+          </Box>
           {/* logout button */}
           {user?.email && (
             <Button color="inherit" onClick={logoutUser}>
