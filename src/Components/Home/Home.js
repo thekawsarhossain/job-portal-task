@@ -1,10 +1,14 @@
+import { Box } from "@mui/material";
 import React from "react";
+import Navigation from "../Shared/Navigation/Navigation";
+import LandingPage from "./LandingPage/LandingPage";
 
 const Home = () => {
   return (
-    <div>
-      <h2>This is the Home section </h2>
-    </div>
+    <Box>
+      <Navigation />
+      <LandingPage />
+    </Box>
   );
 };
 
