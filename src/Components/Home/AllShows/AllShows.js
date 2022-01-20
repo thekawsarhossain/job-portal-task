@@ -1,4 +1,13 @@
-import { Card, Container, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -61,8 +70,6 @@ const AllShows = () => {
                 </CardActions>
               </Card>
             </Grid>
-
- 
           ))}
         </Grid>
       </Container>
